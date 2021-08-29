@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Listings from './components/Listings';
 import styled from 'styled-components';
 import data from './data.json';
+import Listings from './components/Listings';
+import TagFilter from './components/TagFilter';
 
 function App() {
   //State
@@ -11,6 +12,16 @@ function App() {
     <Container>
       <div className='header'>
         <div className='image'></div>
+      </div>
+      <div className='filter-bar'>
+        {filterItems.length > 0 ? (
+          <TagFilter
+            filterItems={filterItems}
+            setFilterItems={setFilterItems}
+          />
+        ) : (
+          <div></div>
+        )}
       </div>
       <main>
         {data.map(listing => (
@@ -47,9 +58,10 @@ const Container = styled.div`
 
   .header {
     background-color: hsl(180, 29%, 50%);
-    height: 7rem;
+    height: 9.5rem;
     .image {
       background-image: url('/images/bg-header-desktop.svg');
+      background-repeat: no-repeat;
       width: 100%;
       height: 100%;
     }

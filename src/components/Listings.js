@@ -46,7 +46,9 @@ export default Listings;
 
 const ListingContainer = styled.div`
   width: 75%;
-  height: 5rem;
-  border: 1px solid black;
+  height: 9rem;
   margin: 1rem 0;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 1px 3px 6px #1c5d5dab;
 `;
