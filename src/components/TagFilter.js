@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import FilterItems from './FilterItems';
 
 const TagFilter = ({ filterItems, setFilterItems }) => {
+  //Functions
+  const clearItems = () => {
+    setFilterItems([]);
+  };
+
   return (
     <Container>
       <div className='tag-container'>
@@ -15,7 +20,7 @@ const TagFilter = ({ filterItems, setFilterItems }) => {
           />
         ))}
       </div>
-      <p>Clear</p>
+      <p onClick={clearItems}>Clear</p>
     </Container>
   );
 };

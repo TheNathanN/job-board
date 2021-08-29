@@ -26,21 +26,10 @@ function App() {
       <main>
         {data.map(listing => (
           <Listings
-            key={listing.id}
-            company={listing.company}
-            logo={listing.logo}
-            newPost={listing.new}
-            featured={listing.featured}
-            position={listing.position}
-            role={listing.role}
-            level={listing.level}
-            postedAt={listing.postedAt}
-            contract={listing.contract}
-            location={listing.location}
-            languages={listing.languages}
-            tools={listing.tools}
             filterItems={filterItems}
             setFilterItems={setFilterItems}
+            key={listing.id}
+            listing={listing}
           />
         ))}
       </main>

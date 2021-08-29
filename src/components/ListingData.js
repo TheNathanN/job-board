@@ -20,10 +20,10 @@ const ListingData = ({
   filterItems,
   setFilterItems,
 }) => {
+  console.log(filterItems);
   return (
     <Container>
       {/* ------------------ 1. Info Half -------------------- */}
-
       {featured ? <div className='ft-stripe'></div> : <div></div>}
       <img src={logo} alt='company logo' />
       <div className='data'>
@@ -38,7 +38,7 @@ const ListingData = ({
               <div></div>
             )}
           </div>
-          {/* --------- Position Info -------- */}
+          {/* --------- Middle Info -------- */}
           <h4>{position}</h4>
           {/* --------- Bottom Info -------- */}
           <div className='meta-info'>
@@ -47,9 +47,10 @@ const ListingData = ({
             </p>
           </div>
         </div>
+
         {/* --------------- 2. Tags Half -------------- */}
         <div className='job-tags'>
-          {/* --------------- Render Role Tags -----------  */}
+          {/* ----------- Render Role Tags ------- */}
           {role ? (
             <Tags
               role={role}
@@ -59,7 +60,7 @@ const ListingData = ({
           ) : (
             ''
           )}
-          {/* --------------- Render Level Tags -----------  */}
+          {/* --------- Render Level Tags -------- */}
           {level ? (
             <Tags
               level={level}
@@ -69,7 +70,7 @@ const ListingData = ({
           ) : (
             ''
           )}
-          {/* --------------- Render Language Tags -----------  */}
+          {/* -------- Render Language Tags ------ */}
           {languages ? (
             <LanguageTags
               languages={languages}
@@ -79,7 +80,7 @@ const ListingData = ({
           ) : (
             ''
           )}
-          {/* --------------- Render Tool Tags -----------  */}
+          {/* --------- Render Tool Tags -------- */}
           {tools ? (
             <ToolTags
               tools={tools}
