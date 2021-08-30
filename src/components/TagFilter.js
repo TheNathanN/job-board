@@ -35,17 +35,18 @@ const Container = styled.div`
   justify-content: space-between;
   background-color: white;
   width: 70%;
-  height: 4rem;
+
   position: absolute;
   box-shadow: 1px 3px 6px #1c5d5dab;
   left: 14.5%;
   top: 12%;
   border-radius: 4px;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   z-index: 2;
 
   .tag-container {
     display: flex;
+    flex-wrap: wrap;
   }
 
   p {

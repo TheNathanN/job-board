@@ -22,7 +22,7 @@ export default Listings;
 const ListingContainer = styled.div`
   width: 75%;
   height: 9rem;
-  margin: 1rem 0 3rem;
+  margin: 0 0 4rem;
   border-radius: 4px;
   background-color: white;
   box-shadow: 1px 3px 6px #1c5d5dab;

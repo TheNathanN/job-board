@@ -72,6 +72,7 @@ const Container = styled.div`
   .header {
     background-color: hsl(180, 29%, 50%);
     height: 9.5rem;
+    margin-bottom: 4rem;
     .image {
       background-image: url('/images/bg-header-desktop.svg');
       background-repeat: no-repeat;

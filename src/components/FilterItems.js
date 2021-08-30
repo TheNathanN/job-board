@@ -45,7 +45,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+  margin: 0.2rem;
   background-color: hsl(180deg 43% 89%);
   height: 1.3rem;
   padding-left: 0.5rem;
