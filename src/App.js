@@ -39,18 +39,7 @@ function App() {
             .map(listing => (
               <Listings
                 key={listing.id}
-                company={listing.company}
-                logo={listing.logo}
-                newPost={listing.new}
-                featured={listing.featured}
-                position={listing.position}
-                role={listing.role}
-                level={listing.level}
-                postedAt={listing.postedAt}
-                contract={listing.contract}
-                location={listing.location}
-                languages={listing.languages}
-                tools={listing.tools}
+                listing={listing}
                 filterItems={filterItems}
                 setFilterItems={setFilterItems}
               />
@@ -61,18 +50,7 @@ function App() {
           {data.map(listing => (
             <Listings
               key={listing.id}
-              company={listing.company}
-              logo={listing.logo}
-              newPost={listing.new}
-              featured={listing.featured}
-              position={listing.position}
-              role={listing.role}
-              level={listing.level}
-              postedAt={listing.postedAt}
-              contract={listing.contract}
-              location={listing.location}
-              languages={listing.languages}
-              tools={listing.tools}
+              listing={listing}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />

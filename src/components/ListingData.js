@@ -4,43 +4,31 @@ import Tags from './Tags';
 import LanguageTags from './LanguageTags';
 import ToolTags from './ToolTags';
 
-const ListingData = ({
-  company,
-  logo,
-  newPost,
-  featured,
-  position,
-  role,
-  level,
-  postedAt,
-  contract,
-  location,
-  languages,
-  tools,
-  filterItems,
-  setFilterItems,
-}) => {
+const ListingData = ({ listing, filterItems, setFilterItems }) => {
   return (
     <Container>
       {/* ------------------ 1. Info Half -------------------- */}
-      {featured ? <div className='ft-stripe'></div> : <div></div>}
-      <img src={logo} alt='company logo' />
+      {listing.featured ? <div className='ft-stripe'></div> : <div></div>}
+      <img src={listing.logo} alt='company logo' />
       {/* --------- Top Info-------- */}
       <div className='data'>
         <div className='job-info'>
           <div className='top-info'>
-            <p>{company}</p>
+            <p>{listing.company}</p>
             <div className='ft-tags'>
-              {newPost && <div className='new icon'>NEW</div>}
-              {featured && <div className='featured icon'>FEATURED</div>}
+              {listing.new && <div className='new icon'>NEW</div>}
+              {listing.featured && (
+                <div className='featured icon'>FEATURED</div>
+              )}
             </div>
           </div>
           {/* --------- Middle Info -------- */}
-          <h4>{position}</h4>
+          <h4>{listing.position}</h4>
           {/* --------- Bottom Info -------- */}
           <div className='meta-info'>
             <p>
-              {postedAt} <span>.</span> {contract} <span>.</span> {location}
+              {listing.postedAt} <span>.</span> {listing.contract}{' '}
+              <span>.</span> {listing.location}
             </p>
           </div>
         </div>
@@ -48,33 +36,33 @@ const ListingData = ({
         {/* --------------- 2. Tags Half -------------- */}
         <div className='job-tags'>
           {/* ----------- Render Role Tags ------- */}
-          {role && (
+          {listing.role && (
             <Tags
-              role={role}
+              role={listing.role}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />
           )}
           {/* --------- Render Level Tags -------- */}
-          {level && (
+          {listing.level && (
             <Tags
-              level={level}
+              level={listing.level}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />
           )}
           {/* -------- Render Language Tags ------ */}
-          {languages && (
+          {listing.languages && (
             <LanguageTags
-              languages={languages}
+              languages={listing.languages}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />
           )}
           {/* --------- Render Tool Tags -------- */}
-          {tools && (
+          {listing.tools && (
             <ToolTags
-              tools={tools}
+              tools={listing.tools}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />

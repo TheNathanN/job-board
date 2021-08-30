@@ -2,38 +2,12 @@ import React from 'react';
 import ListingData from './ListingData';
 import styled from 'styled-components';
 
-const Listings = ({
-  company,
-  logo,
-  newPost,
-  featured,
-  position,
-  role,
-  level,
-  postedAt,
-  contract,
-  location,
-  languages,
-  tools,
-  filterItems,
-  setFilterItems,
-}) => {
+const Listings = ({ listing, filterItems, setFilterItems }) => {
   return (
     <ListingContainer>
       <ListingData
-        key={company}
-        company={company}
-        logo={logo}
-        newPost={newPost}
-        featured={featured}
-        position={position}
-        role={role}
-        level={level}
-        postedAt={postedAt}
-        contract={contract}
-        location={location}
-        languages={languages}
-        tools={tools}
+        key={listing.id}
+        listing={listing}
         filterItems={filterItems}
         setFilterItems={setFilterItems}
       />
