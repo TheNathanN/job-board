@@ -34,8 +34,8 @@ function App() {
               return (
                 filterItems.includes(roles) ||
                 filterItems.includes(level) ||
-                langs.includes(...filterItems) ||
-                tool.includes(...filterItems)
+                [...filterItems].includes(...langs) ||
+                [...filterItems].includes(...tool)
               );
             })
             .map(listing => (

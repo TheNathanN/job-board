@@ -42,6 +42,7 @@ const Container = styled.div`
   top: 12%;
   border-radius: 4px;
   padding: 0 1.5rem;
+  z-index: 2;
 
   .tag-container {
     display: flex;

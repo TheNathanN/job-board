@@ -25,17 +25,19 @@ const ListingData = ({
       {/* ------------------ 1. Info Half -------------------- */}
       {featured ? <div className='ft-stripe'></div> : <div></div>}
       <img src={logo} alt='company logo' />
+      {/* --------- Top Info-------- */}
       <div className='data'>
         <div className='job-info'>
-          {/* --------- Top Info-------- */}
           <div className='top-info'>
             <h6>{company}</h6>
-            {newPost ? <div className='new icon'>NEW</div> : <div></div>}
-            {featured ? (
-              <div className='featured icon'>FEATURED</div>
-            ) : (
-              <div></div>
-            )}
+            <div className='ft-tags'>
+              {newPost ? <div className='new icon'>NEW</div> : <div></div>}
+              {featured ? (
+                <div className='featured icon'>FEATURED</div>
+              ) : (
+                <div></div>
+              )}
+            </div>
           </div>
           {/* --------- Middle Info -------- */}
           <h4>{position}</h4>
@@ -137,26 +139,30 @@ const Container = styled.div`
         font-size: 0.75rem;
         color: hsl(180, 29%, 50%);
       }
-      .icon {
+      .ft-tags {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.52rem;
-        font-weight: bold;
-        color: white;
-        margin: 0 0.25rem;
-        padding-top: 0.2rem;
-        border-radius: 20px;
-        height: 18px;
-        text-align: center;
-      }
-      .new {
-        background-color: hsl(180, 29%, 50%);
-        width: 2.5rem;
-      }
-      .featured {
-        background-color: hsl(180, 14%, 20%);
-        width: 4.2rem;
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.52rem;
+          font-weight: bold;
+          color: white;
+          margin: 0 0.25rem;
+          padding-top: 0.2rem;
+          border-radius: 20px;
+          height: 18px;
+          text-align: center;
+        }
+        .new {
+          background-color: hsl(180, 29%, 50%);
+          width: 2.5rem;
+        }
+        .featured {
+          background-color: hsl(180, 14%, 20%);
+          width: 4.2rem;
+        }
       }
     }
 
@@ -190,5 +196,67 @@ const Container = styled.div`
   .job-tags {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    img {
+      width: 5rem;
+      position: absolute;
+      top: -3rem;
+    }
+
+    .ft-stripe {
+      top: 0;
+      left: 0;
+    }
+
+    .ft-tags {
+      display: flex;
+    }
+
+    .data {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .job-info {
+      padding-bottom: 1rem;
+      margin-left: 0.5rem;
+      border-bottom: 1px solid gray;
+      width: 100%;
+    }
+
+    .job-tags {
+      margin-top: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .job-info {
+      .top-info {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        .ft-tags {
+          display: flex;
+
+          .icon {
+            margin-left: 0rem;
+            margin-top: 0.3rem;
+          }
+        }
+      }
+    }
+    img {
+      width: 4rem;
+      left: 1rem;
+      top: -3rem;
+    }
   }
 `;

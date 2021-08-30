@@ -71,4 +71,8 @@ const Container = styled.div`
     background-color: hsl(180, 29%, 50%);
     color: white;
   }
+
+  @media screen and (max-width: 360px) {
+    margin: 0.2rem;
+  }
 `;

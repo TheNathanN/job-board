@@ -48,8 +48,12 @@ export default Listings;
 const ListingContainer = styled.div`
   width: 75%;
   height: 9rem;
-  margin: 1rem 0;
+  margin: 1rem 0 3rem;
   border-radius: 4px;
   background-color: white;
   box-shadow: 1px 3px 6px #1c5d5dab;
+
+  @media screen and (max-width: 700px) {
+    height: 20rem;
+  }
 `;
