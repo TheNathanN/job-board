@@ -1,11 +1,16 @@
 import React from 'react';
 import Tags from './Tags';
 
-const ToolTags = ({ tools }) => {
+const ToolTags = ({ tools, filterItems, setFilterItems }) => {
   return (
     <>
       {tools.map(tool => (
-        <Tags key={tool} tool={tool} />
+        <Tags
+          filterItems={filterItems}
+          setFilterItems={setFilterItems}
+          key={tool}
+          tool={tool}
+        />
       ))}
     </>
   );

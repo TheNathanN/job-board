@@ -23,16 +23,64 @@ function App() {
           <div></div>
         )}
       </div>
-      <main>
-        {data.map(listing => (
-          <Listings
-            filterItems={filterItems}
-            setFilterItems={setFilterItems}
-            key={listing.id}
-            listing={listing}
-          />
-        ))}
-      </main>
+      {filterItems.length > 0 ? (
+        <main>
+          {data
+            .filter(listings => {
+              const tool = listings.tools;
+              const langs = listings.languages;
+              const level = listings.level;
+              const roles = listings.role;
+              return (
+                filterItems.includes(roles) ||
+                filterItems.includes(level) ||
+                langs.includes(...filterItems) ||
+                tool.includes(...filterItems)
+              );
+            })
+            .map(listing => (
+              <Listings
+                key={listing.id}
+                company={listing.company}
+                logo={listing.logo}
+                newPost={listing.new}
+                featured={listing.featured}
+                position={listing.position}
+                role={listing.role}
+                level={listing.level}
+                postedAt={listing.postedAt}
+                contract={listing.contract}
+                location={listing.location}
+                languages={listing.languages}
+                tools={listing.tools}
+                filterItems={filterItems}
+                setFilterItems={setFilterItems}
+              />
+            ))}
+        </main>
+      ) : (
+        <main>
+          {data.map(listing => (
+            <Listings
+              key={listing.id}
+              company={listing.company}
+              logo={listing.logo}
+              newPost={listing.new}
+              featured={listing.featured}
+              position={listing.position}
+              role={listing.role}
+              level={listing.level}
+              postedAt={listing.postedAt}
+              contract={listing.contract}
+              location={listing.location}
+              languages={listing.languages}
+              tools={listing.tools}
+              filterItems={filterItems}
+              setFilterItems={setFilterItems}
+            />
+          ))}
+        </main>
+      )}
     </Container>
   );
 }

@@ -1,11 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FilterItemsCont = ({ item, filterItems, setFilterItems }) => {
+const FilterItemsCont = ({
+  item,
+  roleFilter,
+  setRoleFilter,
+  levelFilter,
+  setLevelFilter,
+  langFilter,
+  setLangFilter,
+  toolFilter,
+  setToolFilter,
+  filterItems,
+  setFilterItems,
+}) => {
   //Functions
   const removeItem = () => {
     const newFilterItems = filterItems.filter(items => items !== item);
     setFilterItems(newFilterItems);
+    if (roleFilter) {
+      setRoleFilter('');
+    } else if (levelFilter) {
+      setLevelFilter('');
+    } else if (langFilter) {
+      setLangFilter('');
+    } else if (toolFilter) {
+      setToolFilter('');
+    }
   };
 
   return (

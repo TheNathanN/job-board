@@ -20,7 +20,6 @@ const ListingData = ({
   filterItems,
   setFilterItems,
 }) => {
-  console.log(filterItems);
   return (
     <Container>
       {/* ------------------ 1. Info Half -------------------- */}
@@ -190,5 +189,6 @@ const Container = styled.div`
 
   .job-tags {
     display: flex;
+    flex-wrap: wrap;
   }
 `;

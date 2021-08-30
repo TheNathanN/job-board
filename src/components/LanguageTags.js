@@ -1,11 +1,16 @@
 import React from 'react';
 import Tags from './Tags';
 
-const LanguageTags = ({ languages }) => {
+const LanguageTags = ({ languages, filterItems, setFilterItems }) => {
   return (
     <>
       {languages.map(lang => (
-        <Tags key={lang} lang={lang} />
+        <Tags
+          filterItems={filterItems}
+          setFilterItems={setFilterItems}
+          key={lang}
+          lang={lang}
+        />
       ))}
     </>
   );
