@@ -31,7 +31,7 @@ const FilterItemsCont = ({
 
   return (
     <Container>
-      <h6>{item}</h6>
+      <p>{item}</p>
       <div className='remove' onClick={removeItem}></div>
     </Container>
   );
@@ -52,7 +52,7 @@ const Container = styled.div`
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 
-  h6 {
+  p {
     font-size: 0.7rem;
     margin-right: 0.5rem;
     margin-top: 0.2rem;

@@ -19,30 +19,30 @@ const Tags = ({ role, level, lang, tool, filterItems, setFilterItems }) => {
   return (
     <Container>
       {role ? (
-        <h6 className='unfiltered' onClick={addFilterItem}>
+        <p className='unfiltered' onClick={addFilterItem}>
           {role}
-        </h6>
+        </p>
       ) : (
         ''
       )}
       {level ? (
-        <h6 className='unfiltered' onClick={addFilterItem}>
+        <p className='unfiltered' onClick={addFilterItem}>
           {level}
-        </h6>
+        </p>
       ) : (
         ''
       )}
       {lang ? (
-        <h6 className='unfiltered' onClick={addFilterItem}>
+        <p className='unfiltered' onClick={addFilterItem}>
           {lang}
-        </h6>
+        </p>
       ) : (
         ''
       )}
       {tool ? (
-        <h6 className='unfiltered' onClick={addFilterItem}>
+        <p className='unfiltered' onClick={addFilterItem}>
           {tool}
-        </h6>
+        </p>
       ) : (
         ''
       )}
@@ -66,6 +66,11 @@ const Container = styled.div`
   padding: 0.14rem 0.4rem 0;
   cursor: pointer;
   transition: 0.2s ease;
+
+  p {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
 
   &:hover {
     background-color: hsl(180, 29%, 50%);

@@ -29,14 +29,10 @@ const ListingData = ({
       <div className='data'>
         <div className='job-info'>
           <div className='top-info'>
-            <h6>{company}</h6>
+            <p>{company}</p>
             <div className='ft-tags'>
-              {newPost ? <div className='new icon'>NEW</div> : <div></div>}
-              {featured ? (
-                <div className='featured icon'>FEATURED</div>
-              ) : (
-                <div></div>
-              )}
+              {newPost && <div className='new icon'>NEW</div>}
+              {featured && <div className='featured icon'>FEATURED</div>}
             </div>
           </div>
           {/* --------- Middle Info -------- */}
@@ -52,44 +48,36 @@ const ListingData = ({
         {/* --------------- 2. Tags Half -------------- */}
         <div className='job-tags'>
           {/* ----------- Render Role Tags ------- */}
-          {role ? (
+          {role && (
             <Tags
               role={role}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />
-          ) : (
-            ''
           )}
           {/* --------- Render Level Tags -------- */}
-          {level ? (
+          {level && (
             <Tags
               level={level}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />
-          ) : (
-            ''
           )}
           {/* -------- Render Language Tags ------ */}
-          {languages ? (
+          {languages && (
             <LanguageTags
               languages={languages}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />
-          ) : (
-            ''
           )}
           {/* --------- Render Tool Tags -------- */}
-          {tools ? (
+          {tools && (
             <ToolTags
               tools={tools}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
             />
-          ) : (
-            ''
           )}
         </div>
       </div>
@@ -135,7 +123,7 @@ const Container = styled.div`
     .top-info {
       display: flex;
       align-items: center;
-      h6 {
+      p {
         font-size: 0.75rem;
         color: hsl(180, 29%, 50%);
       }

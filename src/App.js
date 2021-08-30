@@ -14,13 +14,11 @@ function App() {
         <div className='image'></div>
       </div>
       <div className='filter-bar'>
-        {filterItems.length > 0 ? (
+        {filterItems.length > 0 && (
           <TagFilter
             filterItems={filterItems}
             setFilterItems={setFilterItems}
           />
-        ) : (
-          <div></div>
         )}
       </div>
       {filterItems.length > 0 ? (
@@ -32,10 +30,10 @@ function App() {
               const level = listings.level;
               const roles = listings.role;
               return (
-                filterItems.includes(roles) ||
-                filterItems.includes(level) ||
-                [...filterItems].includes(...langs) ||
-                [...filterItems].includes(...tool)
+                roles.includes(...filterItems) ||
+                level.includes(...filterItems) ||
+                [...langs].includes(...filterItems) ||
+                [...tool].includes(...filterItems)
               );
             })
             .map(listing => (
